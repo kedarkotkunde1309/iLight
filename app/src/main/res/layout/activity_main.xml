@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_effect"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/headertitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="BLE Mesh"
+            android:visibility="invisible"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/headerLightsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+           android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:text="Lights"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/imageprovision"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_Deviceinfo"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:gravity="center" >
+        <TextView
+            android:id="@+id/device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Name"
+            android:textColor="#000"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/device_uuid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@id/device_name"
+            android:text="UUID"
+            android:textColor="#000"
+            android:textSize="16dp" />
+        <TextView
+            android:id="@+id/device_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@id/device_uuid"
+            android:text="State"
+            android:textColor="#000"
+            android:textSize="16dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relative_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/relative_Deviceinfo"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="3dp"
+        >
+        <TextView
+            android:id="@+id/textviewGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone"
+            android:layout_marginStart="11dp"
+            android:text="Groups" />
+
+
+        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/gridviewGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnWidth="90dp"
+            android:numColumns="4"
+            android:verticalSpacing="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/textviewGroup"
+            android:horizontalSpacing="2dp"
+            android:paddingBottom="30dp"
+            android:stretchMode="columnWidth"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative_group"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/gridview_lights"
+       >
+        <TextView
+            android:id="@+id/textViewItemCounts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="11dp"
+            android:text="Items" />
+        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gridview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnWidth="90dp"
+        android:numColumns="3"
+        android:verticalSpacing="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/textViewItemCounts"
+        android:horizontalSpacing="2dp"
+            android:paddingBottom="30dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/lin_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/gridview_lights"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:indeterminateDrawable="@drawable/progress" >
+        </ProgressBar>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
